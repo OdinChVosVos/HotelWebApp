@@ -1,0 +1,28 @@
+﻿version: '0.1'
+
+services:
+  hotel_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 8080
+    ports:
+      - "8080:8080"
+      
+  mysql_hotel_db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}          
+      MYSQL_USER: ${DB_USER}                
+      MYSQL_PASSWORD: ${DB_PASSWORD}       
+    ports:
+      - "${DB_PORT}:${DB_PORT}"                       
+    volumes:
+      - db_data:/var/lib/mysql              
+
+volumes:
+  db_data:
+
