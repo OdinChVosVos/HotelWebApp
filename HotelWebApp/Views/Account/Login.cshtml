@@ -1,0 +1,55 @@
+﻿@model HotelWebApp.Models.LoginModel
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="text-center mb-4">
+                <img src="~/img/logo.jpg" alt="Логотип" class="img-fluid mb-3" style="max-width: 100px;">
+                <h2 class="fw-bold">Авторизация</h2>
+            </div>
+
+            <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true" class="shadow p-4 rounded">
+                <!-- Validation Summary -->
+                <div class="text-danger mb-3 validation" asp-validation-summary="ModelOnly"></div>
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label asp-for="email" class="form-label">Введите почту</label>
+                    <input type="text" asp-for="email" class="form-control" placeholder="example@mail.com" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+
+                <!-- Password Field -->
+                <div class="mb-3">
+                    <label asp-for="password" class="form-label">Введите пароль</label>
+                    <input type="password" asp-for="password" class="form-control" placeholder="••••••••" />
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid mb-3">
+                    <input type="submit" value="Войти" class="btn btn-dark" />
+                </div>
+
+                <!-- Register Link -->
+                <div class="text-center">
+                    <p class="mb-0">Нет аккаунта?</p>
+                    <a asp-action="Register" asp-controller="Account" class="btn btn-outline-secondary">Регистрация</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Additional Styles for Aesthetic Improvement */
+    .shadow {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .rounded {
+        border-radius: 10px;
+    }
+</style>
+

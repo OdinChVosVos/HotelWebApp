@@ -1,14 +1,13 @@
-﻿version: '0.1'
+﻿version: '0.2'
 
 services:
   hotel_app:
     build:
       context: .
       dockerfile: Dockerfile
-    expose:
-      - 8080
     ports:
       - "8080:8080"
+    
       
   mysql_hotel_db:
     image: mysql:8.0

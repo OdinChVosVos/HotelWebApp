@@ -13,6 +13,42 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\hotel1.jpg",
+      "PackagePath": "staticwebassets\\img\\hotel1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\hotel2.jpg",
+      "PackagePath": "staticwebassets\\img\\hotel2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\hotel3.jpg",
+      "PackagePath": "staticwebassets\\img\\hotel3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\hotel4.jpg",
+      "PackagePath": "staticwebassets\\img\\hotel4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\logo.jpg",
+      "PackagePath": "staticwebassets\\img\\logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\room1.jpeg",
+      "PackagePath": "staticwebassets\\img\\room1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\room2.jpg",
+      "PackagePath": "staticwebassets\\img\\room2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\room3.jpg",
+      "PackagePath": "staticwebassets\\img\\room3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\img\\room4.jpg",
+      "PackagePath": "staticwebassets\\img\\room4.jpg"
+    },
+    {
       "Id": "C:\\Users\\fedor\\Desktop\\HotelWebApp\\HotelWebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

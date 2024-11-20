@@ -1,0 +1,64 @@
+@model List<RoomModel>
+@{
+ViewBag.Title = "Комнаты";
+}
+
+<div class="room-cards">
+    @foreach (var room in Model)
+    {
+    <div class="room-card">
+        <h2>Номер комнаты: @room.roomNumber</h2>
+        <p>Описание: @room.description</p>
+        <p>Гостей: @room.guestQuantity</p>
+        <p>Стоимость за ночь: @room.costPerNight руб.</p>
+        @if (room.active)
+        { 
+            <button class="book-button">Забронировать</button>
+        }
+        else
+        {
+            <button class="booked">Уже забронировано</button>
+        }
+        <button class="open-button">Подробнее</button>
+    </div>
+    }
+</div>
+
+<style>
+    .room-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .room-card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        width: calc(50% - 10px);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .room-card:hover {
+        box-shadow: 0 4px 15px rgba(11, 94, 215, 0.5);
+        transform: translateY(-2px);
+    }
+    .book-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .booked {
+        background-color: #a75428;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .book-button:hover {
+        background-color: #218838;
+    }
+</style>

@@ -1,0 +1,28 @@
+@using HotelWebApp.Models
+@model List<UserModel>
+@{
+ViewBag.Title = "Пользователи";
+}
+
+
+<table id="jqGrid" class="table">
+    <thead>
+    <tr>
+        <td>Имя</td>
+        <td>Дата создания</td>
+        <td>Роль</td>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.name</td>
+        <td>@item.createdAt</td>
+        <td>@item.roleName</td>
+    </tr>
+
+    }
+    </tbody>
+
+</table>
