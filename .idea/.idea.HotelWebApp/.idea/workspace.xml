@@ -13,59 +13,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1812f9ec-48f7-4556-be31-30164de59a0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelWebApp/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelWebApp/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelWebApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelWebApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Controllers/RoomController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Controllers/RoomController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Controllers/UserController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Data/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Entities/Room.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Entities/Room.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Entities/UserRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Entities/UserRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/HotelWebApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/HotelWebApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Migrations/20241120174436_MyFirstMigration.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Migrations/20241120174436_MyFirstMigration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Migrations/DataContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Models/BookRoomRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Models/RoomModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Models/RoomModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Models/UserModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Models/UserModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Views/Room/GetAllRooms.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Views/Room/GetAllRooms.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/Views/User/GetAllUsers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/Views/User/GetAllUsers.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.exe" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/bin/Debug/net8.0/HotelWebApp.staticwebassets.runtime.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/HotelWebApp.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/ref/HotelWebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/ref/HotelWebApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/refint/HotelWebApp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/refint/HotelWebApp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets/msbuild.HotelWebApp.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/Debug/net8.0/staticwebassets/msbuild.HotelWebApp.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/HotelWebApp.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/HotelWebApp.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelWebApp/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HotelWebApp/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
@@ -119,32 +79,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.HotelWebApp: https.executor": "Run",
-    ".NET Launch Settings Profile.WebApplication1: https.executor": "Run",
-    "Docker.Db.executor": "Run",
-    "Docker.HotelWebApp: Compose Deployment.executor": "Run",
-    "Docker.Run build.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.HotelWebApp: https.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.WebApplication1: https.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Db.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.HotelWebApp: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.Run build.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.HotelWebApp: https">
     <configuration name="HotelWebApp: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/HotelWebApp/HotelWebApp.csproj" />
@@ -269,6 +229,8 @@
       <workItem from="1732367294706" duration="4972000" />
       <workItem from="1732388354330" duration="5539000" />
       <workItem from="1732460340586" duration="27580000" />
+      <workItem from="1732500664121" duration="105000" />
+      <workItem from="1732501751477" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="fix: gitignore">
       <option name="closed" value="true" />
@@ -286,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730219119272</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fit: big update">
+      <option name="closed" value="true" />
+      <created>1732500752569</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732500752569</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +282,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix: gitignore" />
     <MESSAGE value="Add .env to .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add .env to .gitignore" />
+    <MESSAGE value="fit: big update" />
+    <option name="LAST_COMMIT_MESSAGE" value="fit: big update" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
