@@ -3,62 +3,47 @@
 ViewBag.Title = "Комнаты";
 }
 
-<div class="room-cards">
-    @foreach (var room in Model)
-    {
-    <div class="room-card">
-        <h2>Номер комнаты: @room.roomNumber</h2>
-        <p>Описание: @room.description</p>
-        <p>Гостей: @room.guestQuantity</p>
-        <p>Стоимость за ночь: @room.costPerNight руб.</p>
-        @if (room.active)
-        { 
-            <button class="book-button">Забронировать</button>
-        }
-        else
+<div class="container mt-5">
+    <h2>Доступные комнаты</h2>
+    <div class="row">
+        @foreach (var room in Model)
         {
-            <button class="booked">Уже забронировано</button>
+            <div class="col-md-4 mb-4">
+                <div class="room-card">
+                    <div class="card shadow-sm">
+                        <img src="/img/room1.jpeg" class="card-img-top" alt="@room.roomNumber" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@room.roomNumber</h5>
+                            <p class="card-text">
+                                <strong>Цена:</strong> @room.costPerNight.ToString("0.00") руб/ночь<br/>
+                                <strong>Описание:</strong> @room.description<br/>
+                                <strong>Количество гостей:</strong> @room.guestQuantity
+                            </p>
+                            <a asp-action="Booking"
+                               asp-controller="Room"
+                               asp-route-roomId="@room.id"
+                               class="btn btn-primary">
+                                Забронировать даты
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         }
-        <button class="open-button">Подробнее</button>
     </div>
-    }
 </div>
 
+
+
+
 <style>
-    .room-cards {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
     .room-card {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 15px;
-        width: calc(50% - 10px);
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
     .room-card:hover {
         box-shadow: 0 4px 15px rgba(11, 94, 215, 0.5);
         transform: translateY(-2px);
-    }
-    .book-button {
-        background-color: #28a745;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .booked {
-        background-color: #a75428;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    .book-button:hover {
-        background-color: #218838;
     }
 </style>

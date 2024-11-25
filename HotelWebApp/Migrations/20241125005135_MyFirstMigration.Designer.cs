@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelWebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241120174436_MyFirstMigration")]
+    [Migration("20241125005135_MyFirstMigration")]
     partial class MyFirstMigration
     {
         /// <inheritdoc />
@@ -34,12 +34,8 @@ namespace HotelWebApp.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("id"));
 
-                    b.Property<bool>("active")
-                        .HasColumnType("tinyint(1)")
-                        .HasColumnName("active");
-
-                    b.Property<int>("costPerNight")
-                        .HasColumnType("int")
+                    b.Property<decimal>("costPerNight")
+                        .HasColumnType("decimal(65,30)")
                         .HasColumnName("cost_per_night");
 
                     b.Property<string>("description")
@@ -63,45 +59,40 @@ namespace HotelWebApp.Migrations
                         new
                         {
                             id = 1L,
-                            active = true,
-                            costPerNight = 2000,
-                            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.",
+                            costPerNight = 2000m,
+                            description = "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.",
                             guestQuantity = 1,
                             roomNumber = 101
                         },
                         new
                         {
                             id = 2L,
-                            active = true,
-                            costPerNight = 1500,
-                            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.",
+                            costPerNight = 1500m,
+                            description = "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.",
                             guestQuantity = 1,
                             roomNumber = 102
                         },
                         new
                         {
                             id = 3L,
-                            active = true,
-                            costPerNight = 5000,
-                            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.",
+                            costPerNight = 5000m,
+                            description = "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.",
                             guestQuantity = 2,
                             roomNumber = 103
                         },
                         new
                         {
                             id = 4L,
-                            active = true,
-                            costPerNight = 3000,
-                            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.",
+                            costPerNight = 3000m,
+                            description = "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.",
                             guestQuantity = 2,
                             roomNumber = 201
                         },
                         new
                         {
                             id = 5L,
-                            active = true,
-                            costPerNight = 4500,
-                            description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.",
+                            costPerNight = 4500m,
+                            description = "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.",
                             guestQuantity = 4,
                             roomNumber = 202
                         });
@@ -197,13 +188,11 @@ namespace HotelWebApp.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<long>("id"));
 
-                    b.Property<DateTime?>("bookedFrom")
-                        .IsRequired()
+                    b.Property<DateTime>("bookedFrom")
                         .HasColumnType("datetime(6)")
                         .HasColumnName("booked_from");
 
-                    b.Property<DateTime?>("bookedUntil")
-                        .IsRequired()
+                    b.Property<DateTime>("bookedUntil")
                         .HasColumnType("datetime(6)")
                         .HasColumnName("booked_until");
 

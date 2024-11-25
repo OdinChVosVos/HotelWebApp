@@ -1,5 +1,7 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using Microsoft.AspNetCore.Mvc.TagHelpers
+﻿@using HotelWebApp.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +11,6 @@
     <title>@ViewData["Title"] - HotelWebApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/HotelWebApp.styles.css" asp-append-version="true"/>
 </head>
 <body>
 <header>
@@ -26,23 +27,30 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Домашняя</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="GetAllRooms">Каталог</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="UserBookings">Мои бронирования</a>
+                    </li>
+
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="GetAllUsers">Пользователи</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="GetAllRooms">Каталог</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="AddRoom">Комнаты</a>
                     </li>
+                    }
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    @if (User.Identity is { IsAuthenticated: true })
+                    @if (SignInManager.IsSignedIn(User))
                     {
                         <li class="nav-item">
                             <form method="post" asp-controller="Account" asp-action="logout">
                                 <button type="submit" style="width:auto"
                                         class="nav-link btn btn-link py-0">
-                                    Выйти @User?.Identity?.Name
+                                    Выйти @User.Identity?.Name
                                 </button>
                             </form>
                         </li>
@@ -77,6 +85,7 @@
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/fullcalendar/dist/index.global.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)

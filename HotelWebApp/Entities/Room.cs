@@ -24,10 +24,7 @@ public class Room
     
     [Required]
     [Column("cost_per_night")]
-    public int costPerNight { get; set; }
-
-    [Column("active")]
-    public bool active { get; set; } = true;
+    public decimal costPerNight { get; set; }
 
 
 }

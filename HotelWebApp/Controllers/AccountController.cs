@@ -31,34 +31,28 @@ public class AccountController : Controller
     
     
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginModel model)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            var usr = await _userManager.FindByEmailAsync(model.email);
-            if (usr is null)
-            {
-                ModelState.AddModelError(string.Empty, "Пользователь не найден");
-                return View();
-            }
-            
-            var res = await _signInManager.PasswordSignInAsync(usr, model.password, false, false);
+            return View(model);
+        }
 
-            if (res.Succeeded)
+        var user = await _userManager.FindByEmailAsync(model.email);
+        if (user != null && user.active && await _userManager.CheckPasswordAsync(user, model.password))
+        {
+            var result = await _signInManager.PasswordSignInAsync(user, model.password, false, lockoutOnFailure: false);
+
+            if (result.Succeeded)
             {
-                await Authenticate(model.email);
                 return RedirectToAction("Index", "Home");
             }
-            
-            
-            ModelState.AddModelError("", "Некорректные логин и(или) пароль");
-            return View();
         }
-        
-        ModelState.AddModelError("", "Некорректные логин и(или) пароль");
-        return View();
+
+        ModelState.AddModelError(string.Empty, "Неудачная попытка входа");
+        return View(model);
     }
-    
     
     [HttpGet]
     public IActionResult Register()
@@ -66,37 +60,44 @@ public class AccountController : Controller
         return View();
     }
     
-    
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Register(RegisterModel model)
     {
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            await Authenticate(model.email);
-
-            var usr = new User
-            {
-                Email = model.email,
-                UserName = model.fullName,
-                fullName = model.fullName,
-            };
-            
-            var res = await _userManager.CreateAsync(usr, model.password);
-                
-            if (res.Succeeded)
-            {
-                await  _userManager.AddToRoleAsync(usr, "User");
-                await _signInManager.SignInAsync(usr, isPersistent: false);
-                
-                return RedirectToAction("Index", "Home");
-            }
-            
-            ModelState.AddModelError("", "Имя пользователя уже занято");
-            return View();
+            return View(model);
         }
-        
-        ModelState.AddModelError("", "Некорректные логин и(или) пароль");
-        return View();
+
+        // Create a new IdentityUser object
+        var user = new User
+        {
+            UserName = model.email,
+            Email = model.email,
+            fullName = model.fullName,
+        };
+
+        // Create the user in the database with the provided password
+        var result = await _userManager.CreateAsync(user, model.password);
+
+        if (result.Succeeded)
+        {
+            // Optional: Add the user to a default role
+            await _userManager.AddToRoleAsync(user, "User");
+
+            // Automatically sign the user in after registration
+            await _signInManager.SignInAsync(user, isPersistent: false);
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        // Add any errors to the ModelState to display them in the view
+        foreach (var error in result.Errors)
+        {
+            ModelState.AddModelError(string.Empty, error.Description);
+        }
+
+        return View(model);
     }
     
     
@@ -108,31 +109,5 @@ public class AccountController : Controller
     }
     
     
-    
-    private async Task Authenticate(string email)
-    {
-        var claims = new List<Claim>
-        {
-            new(ClaimsIdentity.DefaultNameClaimType, email)
-        };
-            
-        var id = new ClaimsIdentity(
-            claims,
-            "ApplicationCookie",
-            ClaimsIdentity.DefaultNameClaimType,
-            ClaimsIdentity.DefaultRoleClaimType);
-        await HttpContext.SignInAsync(new ClaimsPrincipal(id));
-    }
-    
-    
-    private string GetHash(string password)
-    {
-        var salt = Environment.GetEnvironmentVariable("SALT");
-        var md5 = MD5.Create();
-            
-        var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password + salt));
-        Console.WriteLine(Convert.ToBase64String(hash));
-        return Convert.ToBase64String(hash);
-    }
         
 }

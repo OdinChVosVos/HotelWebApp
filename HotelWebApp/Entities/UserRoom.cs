@@ -24,10 +24,10 @@ public class UserRoom
     
     [Required]
     [Column("booked_from")]
-    public DateTime? bookedFrom { get; set; }
+    public DateTime bookedFrom { get; set; }
     
     [Required]
     [Column("booked_until")]
-    public DateTime? bookedUntil { get; set; }
+    public DateTime bookedUntil { get; set; }
     
 }

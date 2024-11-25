@@ -1,4 +1,8 @@
-﻿@{
+﻿@using HotelWebApp.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@{
     ViewData["Title"] = "Home Page";
 }
 

@@ -86,8 +86,7 @@ namespace HotelWebApp.Migrations
                     description = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     guest_quantity = table.Column<int>(type: "int", nullable: false),
-                    cost_per_night = table.Column<int>(type: "int", nullable: false),
-                    active = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    cost_per_night = table.Column<decimal>(type: "decimal(65,30)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -254,14 +253,14 @@ namespace HotelWebApp.Migrations
 
             migrationBuilder.InsertData(
                 table: "room",
-                columns: new[] { "id", "active", "cost_per_night", "description", "guest_quantity", "room_number" },
+                columns: new[] { "id", "cost_per_night", "description", "guest_quantity", "room_number" },
                 values: new object[,]
                 {
-                    { 1L, true, 2000, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.", 1, 101 },
-                    { 2L, true, 1500, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.", 1, 102 },
-                    { 3L, true, 5000, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.", 2, 103 },
-                    { 4L, true, 3000, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.", 2, 201 },
-                    { 5L, true, 4500, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a mi gravida, vulputate nibh non, rutrum nisl. Duis mattis quam ut erat cursus blandit. Aenean volutpat ut felis sed gravida. Ut semper euismod nisi et euismod. Mauris sollicitudin eleifend vestibulum. Ut nec nisl quis nulla tincidunt aliquam. Aenean pellentesque ultrices ante, ut euismod orci luctus nec. Quisque hendrerit semper purus, ut sodales dui tempus vitae. Mauris efficitur porta sem, vitae finibus felis euismod in.", 4, 202 }
+                    { 1L, 2000m, "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.", 1, 101 },
+                    { 2L, 1500m, "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.", 1, 102 },
+                    { 3L, 5000m, "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.", 2, 103 },
+                    { 4L, 3000m, "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.", 2, 201 },
+                    { 5L, 4500m, "Уютная комната с комфортом\n\nНаша комната оснащена удобной двуспальной кроватью, телевизором, мини-баром и бесплатным Wi-Fi. В ванной комнате — качественные туалетные принадлежности и фен. В комнате также есть кондиционер, сейф и кофемашина для вашего удобства. Идеально подходит для отдыха или работы.", 4, 202 }
                 });
 
             migrationBuilder.CreateIndex(

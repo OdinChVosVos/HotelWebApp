@@ -1,0 +1,136 @@
+@model HotelWebApp.Models.BookingViewModel
+
+@{
+    ViewData["Title"] = "Book a Room";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Забронировать комнату</h2>
+
+    <form asp-action="BookRoom" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <input type="hidden" asp-for="roomId"/>
+        <input type="hidden" asp-for="bookedDates"/>
+
+        <div class="form-group row mb-4">
+            <label for="bookedFrom" class="col-sm-3 col-form-label">Дата начала:</label>
+            <div class="col-sm-5">
+                <input
+                    type="text"
+                    id="bookedFrom"
+                    asp-for="bookedFrom"
+                    name="bookedFrom"
+                    readonly
+                    class="form-control"
+                    placeholder="Выберите дату начала" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            <label for="bookedUntil" class="col-sm-3 col-form-label">Дата окончания:</label>
+            <div class="col-sm-5">
+                <input
+                    type="text"
+                    id="bookedUntil"
+                    asp-for="bookedUntil"
+                    name="bookedUntil"
+                    readonly
+                    class="form-control"
+                    placeholder="Выберите дату окончания" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-lg fc-button-primary">Забронировать</button>
+        </div>
+    </form>
+
+    <div id="calendar" class="mt-5"></div>
+</div>
+
+<style>
+    .fc-event {
+        background-color: #ff9f89 !important;
+    }
+
+    #calendar {
+        margin-top: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+    }
+
+    .fc-button-primary {
+        background-color: #6399d5;
+        border-color: #6399d5;
+        color: white;
+    }
+
+    .fc-button-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        color: white;
+    }
+</style>
+
+@section Scripts {
+    <script src="~/lib/fullcalendar/dist/index.global.min.js"></script>
+    <script src="~/lib/fullcalendar/packages/core/locales/ru.global.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const bookedDates = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.bookedDates));
+            const today = new Date();
+
+            const calendarEl = document.getElementById('calendar');
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'ru',
+                selectable: true,
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,dayGridWeek'
+                },
+                events: bookedDates.map(range => ({
+                    start: range.from,
+                    end: range.to,
+                    display: 'background',
+                    backgroundColor: '#ff9f89' // Highlight booked dates
+                })),
+                select: function (info) {
+                    const startDate = info.startStr;
+                    const endDate = info.endStr;
+
+                    document.getElementById("bookedFrom").value = startDate;
+                    document.getElementById("bookedUntil").value = endDate;
+                },
+                selectAllow: function (selectInfo) {
+                    const selectedStart = new Date(selectInfo.start);
+                    const selectedEnd = new Date(selectInfo.end);
+
+                    // Disallow selection in the past
+                    if (selectedStart < today) {
+                        return false;
+                    }
+
+                    // Allow selection if no overlap with booked dates
+                    return !bookedDates.some(range => {
+                        const bookedStart = new Date(range.from);
+                        const bookedEnd = new Date(range.to);
+                        bookedEnd.setDate(bookedEnd.getDate() - 1);
+
+                        return (
+                            (selectedStart >= bookedStart && selectedStart < bookedEnd) ||
+                            (selectedEnd > bookedStart && selectedEnd < bookedEnd) ||
+                            (selectedStart < bookedStart && selectedEnd >= bookedEnd)
+                        );
+                    });
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+}

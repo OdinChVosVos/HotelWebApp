@@ -1,0 +1,73 @@
+@model EditUserViewModel
+
+<div class="container mt-4">
+    <h2 class="mb-3">Редактирование пользователя</h2>
+
+    <!-- Display Success or Error Message -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    <form asp-action="EditUser" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <!-- User Id (Hidden Field) -->
+        <input type="hidden" asp-for="userId" />
+
+        <!-- Name Field -->
+        <div class="form-group row">
+            <label for="email" class="col-sm-2 col-form-label">Почта</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="email" class="form-control" placeholder="Введите имя" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- Username (Login) Field -->
+        <div class="form-group row">
+            <label for="userName" class="col-sm-2 col-form-label">Логин</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="userName" class="form-control" placeholder="Введите логин" />
+                <span asp-validation-for="userName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="fullName" class="col-sm-2 col-form-label">Полное имя</label>
+            <div class="col-sm-6">
+                <input type="text" asp-for="fullName" class="form-control" placeholder="Введите имя" />
+                <span asp-validation-for="fullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <!-- New Password Field -->
+        <div class="form-group row">
+            <label for="newPassword" class="col-sm-2 col-form-label">Новый пароль</label>
+            <div class="col-sm-6">
+                <input type="password" asp-for="newPassword" class="form-control" placeholder="Введите новый пароль" />
+                <span asp-validation-for="newPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <br>
+
+        <!-- Submit Button -->
+        <div class="form-group row">
+            <div class="col-sm-8 offset-sm-2">
+                <button type="submit" class="btn btn-primary btn-lg">Сохранить изменения</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
